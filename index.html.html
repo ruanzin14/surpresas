@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Surpresa para Você 💝</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="corações"></div>
+
+  <h1>Feliz Dia dos Namorados 💘</h1>
+  <button onclick="mostrarSurpresa()">Clique para ver minha surpresa</button>
+
+  <div class="mensagem" id="mensagem">
+    <p>Oi amor, tudo bem? Fiz esse simples site pra te lembrar o quanto eu te amo
+      e o quanto eu sou feliz por te ter em minha vida. Você é o amor da minha vida!
+      Feliz dia!!
+      Minha GOSTOSAAAAAA
+    </p>
+
+    <div class="foto-destaque">
+      <svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <clipPath id="clip-coracao">
+            <path d="M100,30 C70,-10,0,60,100,180 C200,60,130,-10,100,30Z" />
+          </clipPath>
+        </defs>
+        <image 
+          href="foto4.jpg" 
+          width="100%" 
+          height="100%" 
+          clip-path="url(#clip-coracao)" 
+          preserveAspectRatio="xMidYLow slice" />
+      </svg>
+    </div>
+  </div>
+
+  <script>
+    function mostrarSurpresa() {
+      document.getElementById('mensagem').classList.add('mostrar');
+    }
+
+    // Corações animados
+    const container = document.querySelector('.corações');
+    function criarCoração() {
+      const coracao = document.createElement('div');
+      coracao.classList.add('coracao');
+      coracao.style.left = Math.random() * 100 + 'vw';
+      coracao.style.animationDuration = (2 + Math.random() * 3) + 's';
+      container.appendChild(coracao);
+      setTimeout(() => coracao.remove(), 5000);
+    }
+    setInterval(criarCoração, 300);
+  </script>
+</body>
+</html>
