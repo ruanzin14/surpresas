@@ -1,0 +1,115 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #fff0f5;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  overflow-x: hidden;
+  position: relative;
+}
+
+h1 {
+  color: #cc0066;
+  margin-top: 40px;
+}
+
+button {
+  background-color: #ff3399;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 20px;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #e60073;
+}
+
+.mensagem {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.mensagem.mostrar {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mensagem p {
+  font-size: 20px;
+  color: #800040;
+  margin-bottom: 30px;
+}
+
+.foto-destaque {
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+  transition: transform 0.3s;
+}
+
+.foto-destaque:hover {
+  transform: scale(1.05);
+}
+
+.foto-destaque svg {
+  width: 100%;
+  height: 100%;
+}
+
+.corações {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.coracao {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: red;
+  transform: rotate(45deg);
+  animation: subir 5s linear forwards;
+}
+
+.coracao::before,
+.coracao::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: red;
+  border-radius: 50%;
+}
+
+.coracao::before {
+  top: -10px;
+  left: 0;
+}
+
+.coracao::after {
+  left: -10px;
+  top: 0;
+}
+
+@keyframes subir {
+  0% {
+    bottom: 0;
+    opacity: 1;
+  }
+  100% {
+    bottom: 100%;
+    opacity: 0;
+  }
+}
